@@ -1,0 +1,93 @@
+
+
+{% extends "site_base.html" %}
+{% load staticfiles %}
+
+
+
+{% block body_base %}
+
+<h1 style="text-align: center;">Emotional Face Image Rating Task</h1>
+<br>
+<div style="text-align: center;">
+    <img id="stimImage" src={{stimFilename}} onload="this.style.display='block'; this.style.text-align: center;">	
+    <br>
+    <br>
+    <br>
+    <form style="margin: 0 auto; width: 5in;" autocomplete="off" method="GET" action="/rating_GoogleFaces" name="ratingGoogleFaces">
+      <input value={{stimFilename}} name="stimFilename" type="hidden">
+      <input value={{trialStart}} name="trialStart" id="trialStart" type="hidden">
+      <input value={{curTrialNo}} name="curTrialNo" id="curTrialNo" type="hidden">
+      <p style="font-size: large; text-align: center;">{{instructions}}</p>
+      <br>
+      <br>
+      <table  style="margin: 0 auto; width: 5in; table-layout: fixed;">	  
+	<tr>
+	  <td align="center" style="width=14%;"><input type="radio" name="rating" value="Angry"/></td>
+	  <td align="center" style="width=14%;"><input type="radio" name="rating" value="Disgust"/></td>
+	  <td align="center" style="width=14%;"><input type="radio" name="rating" value="Fear"/></td>
+	  <td align="center" style="width=14%;"><input type="radio" name="rating" value="Happy"/></td>
+	  <td align="center" style="width=14%;"><input type="radio" name="rating" value="Neutral"/></td>
+	  <td align="center" style="width=14%;"><input type="radio" name="rating" value="Sad"/></td>
+	  <td align="center" style="width=14%;"><input type="radio" name="rating" value="Surprise"/></td>
+	</tr>
+	<tr>
+	  <td align="center" style="font-size: large; width=14%;">Angry</td>
+	  <td align="center" style="font-size: large; width=14%;">Disgust</td>
+	  <td align="center" style="font-size: large; width=14%;">Fear</td>
+	  <td align="center" style="font-size: large; width=14%;">Happy</td>
+	  <td align="center" style="font-size: large; width=14%;">Neutral</td>
+	  <td align="center" style="font-size: large; width=14%;">Sad</td>
+	  <td align="center" style="font-size: large; width=14%;">Surprise</td>
+	</tr>
+      </table>
+      <br>
+      <br>
+      <input style="font-size: large;" value="Continue" name="Continue" type="submit">
+      <br>
+    </form>
+    <br>
+</div>
+	  
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script>
+$(document).on('submit', 'form', function () {
+    var radios = document.getElementsByName('rating');
+    var checked = false;
+    for (var j = 0, length = radios.length; j < length; j++) 
+    {
+
+       if (radios[j].checked) 
+       {
+        checked = true;
+        break;
+       }
+    }
+    if(!checked)
+    {
+      alert("Please select one of the radio buttons below");
+    }
+    else
+    {
+       document.getElementById("curTrialNo").value = Number(document.getElementById("curTrialNo").value) + 1;
+    }
+    return checked;
+});
+</script>
+{% endblock %}
+
+{% block footer %}
+		<div>
+		<p style="margin:auto;width:100%;text-align:center;">Do not refresh the page</p>	
+		<p style="margin:auto;width:100%;text-align:center;">Bishop Lab, UC Berkeley 2016</p>	
+		</div>
+
+{% endblock %}
+
+
+
+

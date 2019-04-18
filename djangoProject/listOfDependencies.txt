@@ -1,0 +1,12 @@
+pip install simplejson
+pip install django-bootstrap-form
+pip install pinax-theme-bootstrap
+pip install django-user-accounts
+pip install pinax
+pip install pinax-eventlog
+pip install metron
+sudo apt-get install libmysqlclient-dev
+pip install mysql-python
+
+
+

@@ -1,0 +1,10 @@
+
+The following URL will start the Google Faces Rating experiment. 
+http://googlefacesapp.p6vjcwpqet.us-west-2.elasticbeanstalk.com/instructions_GoogleFaces?MID=SamTest&assign_id=Testing&hit_id=TestHit&ratingType=Basic&setType=Cropped
+
+And here's a breakdown fo the post parameters being passed in:
+MID=SamTest # The workers MTurk ID
+assign_id=Testing # The assignment ID we create internally
+hit_id=TestHit # The HITID that comes from MTurk
+ratingType=Basic # Type of rating (Basic, Extended, Valence, Arousal, etc.)
+setType=Cropped # The stimulus set to use (Original, Cropped, Boxed)

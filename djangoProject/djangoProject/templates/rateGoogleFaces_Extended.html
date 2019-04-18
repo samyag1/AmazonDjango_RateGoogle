@@ -1,0 +1,72 @@
+
+
+{% extends "site_base.html" %}
+{% load staticfiles %}
+
+
+
+{% block body_base %}
+
+
+<h1 style="text-align: center;">Emotional Face Image Rating Task</h1>
+<br>
+<div style="text-align: center;">
+    <img id="stimImage" src={{stimFilename}} onload="this.style.display='block'; this.style.text-align: center;">	
+    <br>
+    <br>
+    <br>
+    <form autocomplete="off" method="GET" action="/rating_GoogleFaces" name="ratingGoogleFaces">
+      <input value={{stimFilename}} name="stimFilename" type="hidden">
+      <input value={{trialStart}} name="trialStart" type="hidden">
+      <select style="font-size: x-large;" required="required" name="rating">
+	<option selected="selected" value="select one">- SELECT ONE -</option>
+	<option value="Amusement">Amusement (humor, mirth)</option>
+	<option value="Anger">Anger</option>
+	<option value="Awe">Awe (amazement, wonder)</option>
+	<option value="Concentration">Concentration (focus, absorption)</option>
+	<option value="Confusion">Confusion</option>
+	<option value="Contempt">Contempt (disdain, resentment)</option>
+	<option value="Contentment">Contentment (comfort, satisfaction)</option>
+	<option value="Contemplation">Contemplation (pensiveness)</option>
+	<option value="Desire">Desire (e.g. for food or sex)</option>
+	<option value="Disappointment">Disappointment (letdown, dismay)</option>
+	<option value="Disgust">Disgust</option>
+	<option value="Distress">Distress (anxiety, worry)</option>
+	<option value="Doubt">Doubt (suspicion)</option>
+	<option value="Ecstasy">Ecstasy (bliss, euphoria)</option>
+	<option value="Elation">Elation (exhilaration, glee)</option>
+	<option value="Embarrassment">Embarrassment</option>
+	<option value="Fear">Fear</option>
+	<option value="Interest">Interest (curiosity, inquisitiveness)</option>
+	<option value="Love">Love (adoration, affection)</option>
+	<option value="Pain">Pain</option>
+	<option value="Pride">Pride (e.g. in self or country)</option>
+	<option value="Realization">Realization (epiphany, insight)</option>
+	<option value="Relief">Relief</option>
+	<option value="Sadness">Sadness</option>
+	<option value="Shame">Shame (guilt, remorse)</option>
+	<option value="Surprise">Surprise</option>
+	<option value="Sympathy">Sympathy (compassion, concern)</option>
+	<option value="Triumph">Triumph (achievement, victory)</option>
+      </select>
+      <br>
+      <br>
+      <input style="font-size: large;" value="Continue" name="Continue" type="submit">
+      <br>
+    </form>
+    <br>
+</div>
+	  
+{% endblock %}
+
+{% block footer %}
+		<div>
+		<p style="margin:auto;width:100%;text-align:center;">Do not refresh the page</p>	
+		<p style="margin:auto;width:100%;text-align:center;">Bishop Lab, UC Berkeley 2016</p>	
+		</div>
+
+{% endblock %}
+
+
+
+

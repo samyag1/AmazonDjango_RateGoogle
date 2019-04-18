@@ -1,0 +1,53 @@
+
+
+{% load staticfiles %}
+{% load metron_tags %}
+{% load i18n %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+</head>
+
+
+{% block topbar_base %}
+{% endblock %}
+ 
+{% block body_base %}
+{% endblock %}
+
+{% block footer %}
+<div>
+  <p style="margin:auto;width:100%;text-align:center;"></p>	
+</div>
+{% endblock %}
+
+{% block style_base %}
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "css/heroic-features.css" %}" rel="stylesheet">
+<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+<link href="{% static "css/thumbnail-gallery.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block script_base %}
+<script src="{% static "js/jquery.js"%}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/bootstrap2.min.js" %}"></script>	
+{% endblock %}
+
+{% block extra_js %}{% endblock %}
+{% block extra_css %}{% endblock %}
+
+
+
+
+
+
+
+
+
+

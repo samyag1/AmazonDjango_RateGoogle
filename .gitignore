@@ -1,0 +1,11 @@
+/eb_django_virtualenv/*
+/djangoProject/djangoProject/static/images/*
+/djangoProject/djangoProject/stimOrder/*
+
+**/old
+
+*.*~
+*.pyc
+*.png
+*.jpg
+#*#

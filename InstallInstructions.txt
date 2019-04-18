@@ -1,0 +1,15 @@
+How to install this python django framework for use on Amazon's Elastic Beanstalk:
+
+1. Clone the repo from github: git clone   
+2. cd into the AmazonDjangoWebsite folder
+3. Create a virtualenv: virtualenv eb_django_virtualenv
+4. Enter the virtualenv: source eb_djange_virtualenv/bib/activate
+5. Install MySQL: sudo apt-get install libmysqlclient-dev
+6. cd djangoProject
+6. Install all the python modules: pip install -r requirements.txt
+
+
+
+TODO
+1. Figure out how to remove DB password from settings.py file
+2. Then push changes to github
